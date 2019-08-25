@@ -1,0 +1,279 @@
+body {
+    position: relative;
+}
+
+/*背景圆*/
+.bg{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*  水平居中 垂直居中 */
+    /* background: pink; */
+    transition: all 2s;  /* 过渡尽量本身上写 谁做动画，写到谁身上 */
+    .row1 .orb1, .row1  .orb2 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        left: 50%;
+        margin-top: -280px;
+        margin-left: -30px;
+    }
+    .row1 .orb2 {
+        margin-top: -280px;
+        margin-left: 500px;
+    }
+    .row1  div, .row2  div, .row3  div {
+        /* background:-webkit-linear-gradient(起始位置, 起始颜色， 结束颜色) */
+        background:-webkit-linear-gradient(top, #fff, #dedede);
+        border-radius: 50%;
+    }
+    .row2 .orb1, .row2 .orb2, .row2 .orb3 {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        margin-top: -280px;
+        margin-left: -500px;
+    }
+    .row2 .orb2 {
+        margin-top: -180px;
+        margin-left: 500px;
+    }
+    .row2 .orb3 {
+        margin-top: 50px;
+        margin-left: 0px;
+    }
+    .row3 .orb1, .row3  .orb2 {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        top: 50%;
+        left: 50%;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .row3  .orb2 {
+        margin-top: 100px;
+        margin-left: 1000px;
+    }
+}
+
+/* 动画组 */
+.row1  div {
+    animation: orbmove 100s linear infinite;
+}
+.row2  div {
+    animation: orbmove 40s linear infinite;
+}
+.row3  div {
+    animation: orbmove 80s linear infinite;
+}
+@keyframes orbmove{
+    from {
+        transform: translateX(0px) rotate(0deg);
+        /* translate 相当于相对定位， 从自己现在的位置开始移动距离 */
+    }
+    to {
+        transform: translateX(-2000px) rotate(-3600deg);
+    }
+}
+.rotate{
+    transform: translate(-50%, -50%) rotateZ(-60deg);
+}
+
+/*导航栏*/
+.navbar-default{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    //background-color: rgba(0,25,360,0,0.7);
+
+    .navbar-brand{
+        font-size: 25px;
+        font-weight: bolder;
+        position: relative;
+        >img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        >span{
+           margin-left: 50px;
+            font-size: 20px;
+        }
+    }
+    .navbar-nav{
+        >li{
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+    }
+    .navbar-right{
+        .sigup{
+            border: solid 2px white;
+            box-sizing: border-box;
+            margin-top: -2px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+/*第一屏*/
+.section1{
+    perspective: 1000px; /* 透视 */
+    .container{
+        &.comein{
+            transform: translateZ(0px) rotateY(0deg);
+        }
+        transform: translateZ(500px) rotateY(-180deg);
+        transition: all 2s;
+        >h1{
+            font-size: 50px;
+            text-align: center;
+           font-weight: bolder;
+            margin-bottom: 30px;
+        }
+        >p{
+            text-align: center;
+            font-size: 28px;
+        }
+        @media screen and (max-width: 750px){
+            h1{
+                font-size: 24px;
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+/*第二屏*/
+.section2{
+    perspective: 1000px; /* 透视 */
+    overflow: hidden;
+    .container{
+        position: relative;
+        .text-center{
+            transform: translateZ(800px) rotateY(-60deg);
+            transition: all 2s;
+            padding-bottom: 10px;
+            &.p3{
+                transform: translateZ(0px) rotateY(0deg);
+            }
+        }
+        .all-center{
+            transform: translateZ(-6000px) scale(0.1);
+            transition: all 3s;
+            border: solid 5px #adadad;
+            border-radius: 20px;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            text-align: center;
+            &.p2{
+                transform: translateZ(0);
+            }
+            .imgleft{
+                img{
+                    width:300px;
+                }
+            }
+            .myright{
+                ul{
+                    li{
+                        list-style: none;
+                        font-size: 20px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 750px){
+            .text-center{
+                padding-top: 80px;
+                >h1{
+                    font-size: 28px;
+                }
+            }
+            .all-center{
+                .imgleft{
+                    img{
+                        width:200px;
+                        margin-bottom: 20px;
+                    }
+                }
+                .myright{
+                    ul{
+                        li{
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*第三屏*/
+.section3{
+    overflow: hidden;
+    .container{
+        h1{
+            font-weight: bolder;
+            padding-bottom: 30px;
+            padding-top: 50px;
+            position: relative;
+            top: -500px;
+        }
+        .introduce{
+            border: solid 5px #adadad;
+            border-radius: 20px;
+            padding:30px 30px 10px 30px;
+            font-size: 22px;
+            text-align: left;
+            position: relative;
+            bottom: -500px;
+        }
+    }
+}
+
+/*第四屏*/
+.section4{
+    perspective: 1000px; /* 透视 */
+    overflow: hidden;
+    .container{
+        .myCanvas{
+            height: 400px;
+            transform: translateZ(1000px) rotateZ(-270deg);
+            transition: all 2s;
+            &.p4{
+                    transform: translateZ(0px) rotateZ(0);
+            }
+        }
+    }
+}
+
+/*第五屏*/
+.section5{
+    .container{
+        .row{
+            h1{
+                font-weight: bolder;
+                margin-bottom: 30px;
+            }
+            p{
+                font-size: 20px;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+/*内容栏*/

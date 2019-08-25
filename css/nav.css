@@ -1,0 +1,252 @@
+body {
+  position: relative;
+}
+/*背景圆*/
+.bg {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*  水平居中 垂直居中 */
+  /* background: pink; */
+  transition: all 2s;
+  /* 过渡尽量本身上写 谁做动画，写到谁身上 */
+}
+.bg .row1 .orb1,
+.bg .row1 .orb2 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  margin-top: -280px;
+  margin-left: -30px;
+}
+.bg .row1 .orb2 {
+  margin-top: -280px;
+  margin-left: 500px;
+}
+.bg .row1 div,
+.bg .row2 div,
+.bg .row3 div {
+  /* background:-webkit-linear-gradient(起始位置, 起始颜色， 结束颜色) */
+  background: -webkit-linear-gradient(top, #fff, #dedede);
+  border-radius: 50%;
+}
+.bg .row2 .orb1,
+.bg .row2 .orb2,
+.bg .row2 .orb3 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-top: -280px;
+  margin-left: -500px;
+}
+.bg .row2 .orb2 {
+  margin-top: -180px;
+  margin-left: 500px;
+}
+.bg .row2 .orb3 {
+  margin-top: 50px;
+  margin-left: 0px;
+}
+.bg .row3 .orb1,
+.bg .row3 .orb2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-top: 0;
+  margin-left: 0;
+}
+.bg .row3 .orb2 {
+  margin-top: 100px;
+  margin-left: 1000px;
+}
+/* 动画组 */
+.row1 div {
+  animation: orbmove 100s linear infinite;
+}
+.row2 div {
+  animation: orbmove 40s linear infinite;
+}
+.row3 div {
+  animation: orbmove 80s linear infinite;
+}
+@keyframes orbmove {
+  from {
+    transform: translateX(0px) rotate(0deg);
+    /* translate 相当于相对定位， 从自己现在的位置开始移动距离 */
+  }
+  to {
+    transform: translateX(-2000px) rotate(-3600deg);
+  }
+}
+.rotate {
+  transform: translate(-50%, -50%) rotateZ(-60deg);
+}
+/*导航栏*/
+.navbar-default {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.navbar-default .navbar-brand {
+  font-size: 25px;
+  font-weight: bolder;
+  position: relative;
+}
+.navbar-default .navbar-brand > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.navbar-default .navbar-brand > span {
+  margin-left: 50px;
+  font-size: 20px;
+}
+.navbar-default .navbar-nav > li {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.navbar-default .navbar-right .sigup {
+  border: solid 2px white;
+  box-sizing: border-box;
+  margin-top: -2px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/*第一屏*/
+.section1 {
+  perspective: 1000px;
+  /* 透视 */
+}
+.section1 .container {
+  transform: translateZ(500px) rotateY(-180deg);
+  transition: all 2s;
+}
+.section1 .container.comein {
+  transform: translateZ(0px) rotateY(0deg);
+}
+.section1 .container > h1 {
+  font-size: 50px;
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 30px;
+}
+.section1 .container > p {
+  text-align: center;
+  font-size: 28px;
+}
+@media screen and (max-width: 750px) {
+  .section1 .container h1 {
+    font-size: 24px;
+  }
+  .section1 .container p {
+    font-size: 20px;
+  }
+}
+/*第二屏*/
+.section2 {
+  perspective: 1000px;
+  /* 透视 */
+  overflow: hidden;
+}
+.section2 .container {
+  position: relative;
+}
+.section2 .container .text-center {
+  transform: translateZ(800px) rotateY(-60deg);
+  transition: all 2s;
+  padding-bottom: 10px;
+}
+.section2 .container .text-center.p3 {
+  transform: translateZ(0px) rotateY(0deg);
+}
+.section2 .container .all-center {
+  transform: translateZ(-6000px) scale(0.1);
+  transition: all 3s;
+  border: solid 5px #adadad;
+  border-radius: 20px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.section2 .container .all-center.p2 {
+  transform: translateZ(0);
+}
+.section2 .container .all-center .imgleft img {
+  width: 300px;
+}
+.section2 .container .all-center .myright ul li {
+  list-style: none;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 750px) {
+  .section2 .container .text-center {
+    padding-top: 80px;
+  }
+  .section2 .container .text-center > h1 {
+    font-size: 28px;
+  }
+  .section2 .container .all-center .imgleft img {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  .section2 .container .all-center .myright ul li {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+/*第三屏*/
+.section3 {
+  overflow: hidden;
+}
+.section3 .container h1 {
+  font-weight: bolder;
+  padding-bottom: 30px;
+  padding-top: 50px;
+  position: relative;
+  top: -500px;
+}
+.section3 .container .introduce {
+  border: solid 5px #adadad;
+  border-radius: 20px;
+  padding: 30px 30px 10px 30px;
+  font-size: 22px;
+  text-align: left;
+  position: relative;
+  bottom: -500px;
+}
+/*第四屏*/
+.section4 {
+  perspective: 1000px;
+  /* 透视 */
+  overflow: hidden;
+}
+.section4 .container .myCanvas {
+  height: 400px;
+  transform: translateZ(1000px) rotateZ(-270deg);
+  transition: all 2s;
+}
+.section4 .container .myCanvas.p4 {
+  transform: translateZ(0px) rotateZ(0);
+}
+/*第五屏*/
+.section5 .container .row h1 {
+  font-weight: bolder;
+  margin-bottom: 30px;
+}
+.section5 .container .row p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+/*内容栏*/
+/*# sourceMappingURL=nav.css.map */

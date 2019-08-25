@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--移动端的适配-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>蔡志强的个人简历</title>
+    <!-- Bootstrap  引入当前bootstrap框架核心的样式文件 -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!--引入fullPage-->
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <!--引入自定义css文件-->
+    <link rel="stylesheet" href="./css/nav.css">
+    <!--站点图标-->
+    <link rel="shortcut icon" href="img/my.bmp" type="image/x-icon">
+</head>
+<body style="height:100%!important">
+<!-- 背景圆 -->
+<div class="bg">
+    <div class="row1">
+        <div class="orb1"></div>
+        <div class="orb2"></div>
+        <div class="orb3"></div>
+    </div>
+    <div class="row2">
+        <div class="orb1"></div>
+        <div class="orb2"></div>
+        <div class="orb3"></div>
+    </div>
+    <div class="row3">
+        <div class="orb1"></div>
+        <div class="orb2"></div>
+    </div>
+
+</div>
+
+<!--导航条-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!--手机端-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="img/my.bmp" alt="">
+                <span>蔡志强的个人简历</span>
+            </a>
+        </div>
+        <!--pc-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#one">我的首页 </a></li>
+                <li><a href="#two">关于我</a></li>
+                <li><a href="#three">小作品</a></li>
+                <li><a href="#four">技术栈</a></li>
+                <li><a href="#five">联系我</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="fullpage">
+    <!--第一屏-->
+    <div class="section section1">
+        <div class="container">
+            <h1>一个因为兴趣使然而热爱编程的人</h1>
+            <p>越努力，越幸运</p>
+            <p>The harder you work，the luckier you will be.</p>
+        </div>
+    </div>
+    <!--第二屏-->
+    <div class="section section2">
+        <div class="container">
+            <!--标题-->
+            <div class="text-center">
+                <h1><strong>About ME</strong></h1>
+            </div>
+            <!--内容-->
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 all-center">
+                    <div class="row">
+                        <div class="col-md-5 imgleft"><img src="img/page2.jpg" class="img-responsive img-thumbnail"></div>
+                        <div class="col-md-7 myright">
+                            <ul>
+                                <li>姓名：蔡志强</li>
+                                <li>生日：1998/01/29</li>
+                                <li>住址：广东广州</li>
+                                <li>求职意向：前端开发实习生</li>
+                                <li>专业：软件技术</li>
+                                <li>在读院校：广东工贸职业技术学院</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="section section3">
+        <div class="container">
+            <h1 class="text-center">自我介绍</h1>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="introduce col-md-4 text-center">
+                    <p>1.熟悉html，css，javascript</p>
+                    <p>2.了解正则表达式</p>
+                    <p>3.熟练使用jquery</p>
+                    <p>4.能使用ajax</p>
+                    <p>5.会基本使用h5,了解canvas</p>
+                    <p>6.会使用fullpage 全屏插件， Easing.js 动画插件</p>
+                    <p>7.熟练掌握bootstarp，会使用less预处理</p>
+                    <p>8.会使用git管理项目</p>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+    <div class="section section4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 myCanvas" id="main">
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+    <div class="section section5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 text-center">
+                    <h1>Contact Way</h1>
+                    <img src="img/weixin.jpg" width="150px">
+                    <p>微信二维码</p>
+                    <p>电话：13076547604</p>
+                    <p>邮箱：czq980129@163.com</p>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+<!-- bootstrap是基于iQuery，所以先引入jq-->
+<script src="./js/jquery.js"></script>
+<!-- bootstrap核心的js文件-->
+<script src="./js/bootstrap.js"></script>
+<!--jquery.fullPage.js-->
+<script src="js/jquery.fullPage.js"></script>
+<!--自定义js-->
+<script src="js/myjs.js"></script>
+<!--引进动画插件-->
+<script src="js/jquery.easing.1.3.js"></script>
+<!--引进echarts插件-->
+<script src="js/echarts.js"></script>
+<!--echarts的配置文件-->
+<script src="js/canvas.js"></script>
